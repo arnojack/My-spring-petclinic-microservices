@@ -19,8 +19,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.cloud.client.circuitbreaker.ReactiveCircuitBreaker;
 import org.springframework.cloud.client.circuitbreaker.ReactiveCircuitBreakerFactory;
 import org.springframework.samples.petclinic.api.application.CustomersServiceClient;
+import org.springframework.samples.petclinic.api.application.UserServiceClient;
 import org.springframework.samples.petclinic.api.application.VisitsServiceClient;
 import org.springframework.samples.petclinic.api.dto.OwnerDetails;
+import org.springframework.samples.petclinic.api.dto.User;
 import org.springframework.samples.petclinic.api.dto.Visits;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -41,9 +43,16 @@ public class ApiGatewayController {
 
     private final CustomersServiceClient customersServiceClient;
 
+    private final UserServiceClient userServiceClient;
+
     private final VisitsServiceClient visitsServiceClient;
 
     private final ReactiveCircuitBreakerFactory cbFactory;
+
+    @GetMapping(value = "sign/{username}")
+    public Mono<User> getUser(final @PathVariable String username) {
+        return userServiceClient.get_login_res(username);
+    }
 
     @GetMapping(value = "owners/{ownerId}")
     public Mono<OwnerDetails> getOwnerDetails(final @PathVariable int ownerId) {

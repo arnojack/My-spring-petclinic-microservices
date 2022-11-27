@@ -11,7 +11,9 @@ logging:
       springframework:
         boot: INFO
         web: INFO
-
+# 修改项目默认端口8080
+server:
+  port: 8761
 ---
 spring:
   config:

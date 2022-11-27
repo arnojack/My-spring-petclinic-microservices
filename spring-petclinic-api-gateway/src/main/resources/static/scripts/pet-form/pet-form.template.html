@@ -11,8 +11,8 @@
     <div class="form-group">
         <label class="col-sm-2 control-label">Name </label>
         <div class="col-sm-6">
-            <input class="form-control col-sm-4" ng-model="$ctrl.pet.name" name="name" required type="text"/>
-            <span ng-show="petForm.name.$error.required" class="help-inline">Name is required.</span>
+            <input class="form-control col-sm-4" name="name" ng-model="$ctrl.pet.name" required type="text"/>
+            <span class="help-inline" ng-show="petForm.name.$error.required">Name is required.</span>
         </div>
     </div>
 
@@ -20,7 +20,7 @@
         <label class="col-sm-2 control-label">Birth date</label>
         <div class="col-sm-6">
             <input class="form-control" ng-model="$ctrl.pet.birthDate" required type="date"/>
-            <span ng-show="petForm.name.$error.required" class="help-inline"> birth date is required.</span>
+            <span class="help-inline" ng-show="petForm.name.$error.required"> birth date is required.</span>
         </div>
     </div>
 

@@ -1,38 +1,63 @@
-<nav class="navbar navbar-default" role="navigation">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#"><span></span></a>
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-                <span class="sr-only"><os-p>Toggle navigation</os-p></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="navbar-collapse collapse" id="main-navbar">
-            <ul class="nav navbar-nav navbar-right">
-                <li ui-sref-active="active">
-                    <a ui-sref="welcome" title="home page">
-                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                        <span>Home</span>
-                    </a>
-                </li>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation" >
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#"><span></span></a>
+        <button class="navbar-toggle" data-target="#main-navbar" data-toggle="collapse" type="button">
+            <span class="sr-only"><os-p>Toggle navigation</os-p></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse justify-content-end" id="main-navbar">
+        <ul class="nav navbar-nav">
+            <li ui-sref-active="active">
+                <a title="home page" ui-sref="welcome">
+                    <span aria-hidden="true" class="glyphicon glyphicon-home"></span>
+                    <span>Home</span>
+                </a>
+            </li>
 
-                <li ui-sref-active="active" class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                       aria-haspopup="true" aria-expanded="false">Owners<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a ui-sref="owners"><span class="glyphicon glyphicon-search" aria-hidden="true"></span><span> All</span></a></li>
-                        <li><a ui-sref="ownerNew"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><span> Register</span></a></li>
-                    </ul>
-                </li>
+            <li class="dropdown" ui-sref-active="active">
+                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
+                   href="javascript:void(0)" role="button">Owners<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a ui-sref="owners"><span aria-hidden="true" class="glyphicon glyphicon-search"></span><span> All</span></a>
+                    </li>
+                    <li><a ui-sref="ownerNew"><span aria-hidden="true" class="glyphicon glyphicon-plus"></span><span> Register</span></a>
+                    </li>
+                </ul>
+            </li>
 
-                <li ui-sref-active="active">
-                    <a ui-sref="vets" title="veterinarians">
-                        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-                        <span>Veterinarians</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+            <li ui-sref-active="active">
+                <a title="veterinarians" ui-sref="vets">
+                    <span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>
+                    <span>Veterinarians</span>
+                </a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a title="login" ui-sref="loginNew">
+                    <span aria-hidden="true" class="glyphicon glyphicon-th-list"></span>
+                    <span>log-in</span>
+                </a>
+            </li>
+
+            <li ui-sref-active="active">
+                <div style="text-align:center">
+                <button class="btn btn-outline-danger btn-lg" onclick="functionToExecute()">log-out</button>
+                </div>
+            </li>
+
+        </ul>
+    </div>
 </nav>
+
+<script type="text/javascript">
+    function functionToExecute() {
+        deleteCookie('username');
+        alert("您已登出!");
+    }
+</script>

@@ -4,7 +4,9 @@ spring:
   config:
     import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}
 
-
+# 修改项目默认端口8080
+server:
+  port: 9090
 ---
 spring:
   config:
