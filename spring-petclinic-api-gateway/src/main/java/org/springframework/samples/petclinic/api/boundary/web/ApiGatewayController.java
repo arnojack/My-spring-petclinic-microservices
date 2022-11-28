@@ -50,7 +50,7 @@ public class ApiGatewayController {
     private final ReactiveCircuitBreakerFactory cbFactory;
 
     @GetMapping(value = "sign/{username}")
-    public Mono<User> getUser(final @PathVariable String username) {
+    public Mono<User> getUser(@PathVariable String username) {
         return userServiceClient.get_login_res(username);
     }
 
