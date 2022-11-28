@@ -1,5 +1,9 @@
 [原项目地址](https://github.com/spring-petclinic/spring-petclinic-microservices)
 
+该项目涉及到的框架有：angular-ui-router，rest，spring framework
+
+[解决ui-router路由监听$stateChangeStart、$stateChangeSuccess、$stateChangeError不执行的问题](https://www.cnblogs.com/qiaduan/p/10250308.html)
+
 扩展内容：
 1.	前端方面，修改了主页格式，增加轮播图，将welcome页面美化。（如图2.1所示）
 
